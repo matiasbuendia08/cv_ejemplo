@@ -2,303 +2,274 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matias Buendia - Resume</title>
+  <meta charset="UTF-8">
+  <title>Matias Buendia | Economics & Research</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO -->
+  <meta name="description" content="Economics student with experience in research, data analysis, and sustainable development. Skilled in Stata, R, Python, and Power BI.">
+  <meta name="author" content="Matias Buendia">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- AOS CSS -->
+  <!-- AOS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <!-- GLightbox CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
-
-  <!-- Swiper CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS -->
   <style>
     body {
       font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
     }
 
-    
-    .foto-hero {
-      max-width: 120px;
+    /* NAVBAR */
+    .navbar {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(120deg, #0d6efd, #6610f2);
+      color: white;
+    }
+
+    #hero img {
+      width: 160px;
       border-radius: 50%;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,.4);
     }
 
-    .foto-hero:hover {
-      transform: scale(1.05);
+    /* SECTION */
+    section {
+      padding: 80px 0;
     }
 
-    
-    .foto-up {
-      width: 100%;           /* Ocupa todo el ancho del contenedor */
-      max-width: 600px;      /* Máximo ancho de 600px */
-      height: auto;          /* Mantiene la proporción original de la foto */
-      border-radius: 0;      /* Sin bordes redondeados */
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra más marcada */
-      display: block;
-      margin: 30px auto;     /* Centrada y con más espacio arriba/abajo */
-      transition: transform 0.3s ease;
-    }
-
-    .foto-up:hover {
-      transform: scale(1.03); /* Ligera ampliación al pasar el mouse */
-    }
-
-    
     .section-title h2 {
-      font-size: 32px;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 20px;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      border-left: 3px solid #0d6efd;
+      padding-left: 30px;
+    }
+
+    .timeline-item {
+      margin-bottom: 40px;
       position: relative;
     }
 
-   
-    #scroll-top {
-      position: fixed;
-      right: 15px;
-      bottom: 15px;
-      width: 40px;
-      height: 40px;
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -41px;
+      top: 0;
+      width: 18px;
+      height: 18px;
       background: #0d6efd;
-      color: #fff;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 999;
     }
 
-    #scroll-top:hover {
-      background: #0056b3;
+    /* SKILLS */
+    .progress {
+      height: 8px;
+    }
+
+    /* PROJECTS */
+    .card {
+      transition: transform .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: #aaa;
+      padding: 20px 0;
     }
   </style>
 </head>
 
-<body class="index-page">
+<body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex flex-column justify-content-center">
-  <i class="header-toggle d-xl-none bi bi-list"></i>
-  <nav id="navmenu" class="navmenu">
-    <ul>
-      <li><a href="#hero" class="active"><span>Home</span></a></li>
-      <li><a href="#about"><span>About</span></a></li>
-      <li><a href="#experience"><span>Experience</span></a></li>
-      <li><a href="#studies"><span>Studies</span></a></li>
-      <li><a href="#skills"><span>Skills</span></a></li>
-      <li><a href="#extras"><span>Extras</span></a></li>
-      <li><a href="#contact"><span>Contact</span></a></li>
-    </ul>
-  </nav>
-</header>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Matias Buendia</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
+<!-- HERO -->
+<section id="hero">
+  <div class="container text-center" data-aos="zoom-in">
+    <img src="foto_1.jpg" alt="Matias Buendia">
+    <h1 class="display-4 mt-3 fw-bold">Matias Buendia</h1>
+    <p class="lead">Economics Student · Research Analyst · Sustainable Development</p>
+    <a href="#contact" class="btn btn-light mt-3">Contact Me</a>
+  </div>
+</section>
 
-  <main class="main">
+<!-- ABOUT -->
+<section id="about">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title text-center">
+      <h2>About Me</h2>
+    </div>
+    <p class="text-center">
+      9th-semester Economics student at Universidad del Pacífico with experience in economic research,
+      data analysis, and development studies. Passionate about evidence-based policy and sustainability.
+    </p>
+  </div>
+</section>
 
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="hero section light-background">
-      <div class="container text-center" data-aos="zoom-out">
-        <h1>Matias Buendia</h1>
-        <p>Economics Student | Research Enthusiast | Sustainable Development Advocate</p>
-        <img src="foto_1.jpg" alt="LinkedIn Photo" class="img-fluid mt-3 foto-hero">
-      </div>
-    </section>
+<!-- EXPERIENCE -->
+<section id="experience" class="bg-light">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title text-center">
+      <h2>Experience</h2>
+    </div>
 
-    <!-- ======= Sección 2 ======= -->
-    <section id="about" class="about section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About Me</h2>
-        <p>I'm a 9th-semester Economics student at Universidad del Pacífico. Experienced in research projects on development, analyzing macroeconomic and microeconomic trends, and passionate about sustainable economic growth.</p>
-      </div>
-    </section>
-
-    <!-- ======= secion 3 ======= -->
-    <section id="experience" class="experience section">
-      <div class="container" data-aos="fade-up">
-        <div class="row gy-4">
-          <div class="col-lg-12 content">
-            <h3>Pre-professional Experience</h3>
-
-            <strong>Instituto Peruano de Economía</strong> (May 2024 - Present)<br>
-            <em>Intern</em>
-            <ul>
-              <li>Drafted reports on regional economic performance and competitiveness.</li>
-              <li>Designed infographics to communicate complex insights.</li>
-              <li>Maintained databases for formal employment and electricity usage.</li>
-              <li>Contributed to publications like INCORE, IRGB, and IRESA.</li>
-              <li>Participated in a GDP nowcasting project.</li>
-            </ul>
-
-            <strong>MEDLIFE UP</strong> (Mar 2023 - Jul 2025)<br>
-            <em>Director of Research and Development</em>
-            <ul>
-              <li>Conducted research on social issues impacting the national economy.</li>
-              <li>Edited over 30 research pieces and reports.</li>
-              <li>Structured departmental work plans.</li>
-              <li>Assisted in volunteer activities with social impact.</li>
-            </ul>
-
-            <strong>Acción Sostenible UP</strong> (Jun 2023 - Jul 2025)<br>
-            <em>Research Manager</em>
-            <ul>
-              <li>Conducted research on environmental topics.</li>
-              <li>Authored news articles, research reports, and academic papers.</li>
-            </ul>
-
-            <img src="foto_2.jpg" alt="UP Photo" class="foto-up">
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= Sección 4 ======= -->
-    <section id="studies" class="section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Studies</h2>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
-          <div class="col-lg-12">
-            <strong>Universidad del Pacífico</strong> (Jan 2021 - Present)<br>
-            <em>Economics and Finance Faculty, Top 20%</em>
-            <ul>
-              <li>Participated in research projects and academic programs.</li>
-            </ul>
-
-            <strong>Queen's University, Smith School of Business</strong> (Aug 2024 - Dec 2024)<br>
-            <em>Ontario, Canada</em>
-            <ul>
-              <li>International academic program with courses in Economics, Business, and Development.</li>
-              <li>Authored research papers and developed a research proposal.</li>
-              <li>Active member of MEDLIFE Queens.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= sección 5 ======= -->
-    <section id="skills" class="skills section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
-
-          <!-- Languages -->
-          <div class="col-lg-6">
-            <p><strong>Languages</strong></p>
-            <ul>
-              <li>Advanced English
-                <ul>
-                  <li>TOEFL iBT (2023)</li>
-                  <li>First Certificate in English (FCE) (2020)</li>
-                  <li>Advanced V, Upper Intermediate (2019)</li>
-                </ul>
-              </li>
-              <li>Advanced Portuguese
-                <ul>
-                  <li>Avançado IV, Centro Cultural Brasil-Perú (2019)</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-
-          <!-- sección 6 -->
-          <div class="col-lg-6">
-            <p><strong>Technical Skills</strong></p>
-            <ul>
-              <li>Excel: Advanced (Macros, Pivot Tables, Charts)</li>
-              <li>Advanced Stata and R: Database management, statistical tests, chart generation</li>
-              <li>Intermediate Power BI and Matlab</li>
-              <li>Python: Intermediate</li>
-              <li>Julia: Intermediate</li>
-              <li>Advanced Microsoft Office 2021</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= Extras ======= -->
-    <section id="extras" class="extras section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Extras & References</h2>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="extras-content mb-4">
-          <h3>Additional Information</h3>
-          <ul>
-            <li>Outstanding results in courses on research methods and macroeconomics.</li>
-            <li>Participation and recognition of a Research Proposal on minimum wage increases in different provinces of Canada using Dif-in-Dif.</li>
-            <li>Base project on insecurity and perception of insecurity.</li>
-          </ul>
-        </div>
-        <div class="references-content">
-          <h3>References</h3>
-          <ul>
-            <li>
-              <strong>Luis Llosa Velasquez</strong><br>
-              Universidad del Pacífico, Professor, Department of Economics<br>
-              Phone: 219 0100 Anx. 2099<br>
-              Email: <a href="mailto:lg.llosav@up.edu.pe">lg.llosav@up.edu.pe</a>
-            </li>
-            <li class="mt-3">
-              <strong>Paola Herrera Gaspar</strong><br>
-              Instituto Peruano de Economía, Senior Economist<br>
-              Phone: 998 889 974<br>
-              Email: <a href="mailto:pherrera@ipe.org.pe">pherrera@ipe.org.pe</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= Contactos ======= -->
-    <section id="contact" class="contact section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h5>Instituto Peruano de Economía</h5>
+        <p><em>Intern | May 2024 – Present</em></p>
         <ul>
-          <li><strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/matias-alonso-buendia-ugarriza-86992128a/">Click here</a></li>
-          <li><strong>Phone:</strong> +51 999 093 422</li>
-          <li><strong>City:</strong> Lima, Peru</li>
-          <li><strong>Email:</strong> <a href="mailto:matalonsobu2004@gmail.com">matalonsobu2004@gmail.com</a></li>
+          <li>Drafted regional economic reports.</li>
+          <li>Built datasets for employment and electricity usage.</li>
+          <li>Contributed to GDP nowcasting project.</li>
         </ul>
       </div>
-    </section>
 
-  </main>
+      <div class="timeline-item">
+        <h5>MEDLIFE UP</h5>
+        <p><em>Director of Research | 2023 – 2025</em></p>
+        <ul>
+          <li>Edited 30+ research articles.</li>
+          <li>Designed research plans and reports.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-    <i class="bi bi-arrow-up-short"></i>
-  </a>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title text-center">
+      <h2>Skills</h2>
+    </div>
 
- 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Stata</p>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-primary" style="width: 90%"></div>
+        </div>
 
-  <!-- Main JS -->
-  <script>
-    AOS.init();
-  </script>
+        <p>R</p>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-success" style="width: 85%"></div>
+        </div>
+
+        <p>Python</p>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-warning" style="width: 75%"></div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <p>Power BI</p>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-info" style="width: 70%"></div>
+        </div>
+
+        <p>Excel</p>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-dark" style="width: 90%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="bg-light">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title text-center">
+      <h2>Projects</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5>GDP Nowcasting</h5>
+            <p>Short-term economic forecasting using Stata and R.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5>Minimum Wage Dif-in-Dif</h5>
+            <p>Policy evaluation using Canadian provincial data.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container text-center" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Contact</h2>
+    </div>
+    <p>Email: <a href="mailto:matalonsobu2004@gmail.com">matalonsobu2004@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com" target="_blank">Profile</a></p>
+    <p>Lima, Peru</p>
+  </div>
+</section>
+
+<footer class="text-center">
+  © 2025 Matias Buendia
+</footer>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
 </body>
 </html>
