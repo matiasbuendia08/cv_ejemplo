@@ -6,6 +6,11 @@
   <title>Matias Buendia | CV</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <meta name="description" content="Economics student with experience in research, public policy and sustainable development.">
+
+<link rel="icon" href="favicon.ico">
+
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -19,66 +24,124 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-    }
+  :root {
+    --primary: #0d6efd;
+    --secondary: #6610f2;
+    --dark: #111;
+    --light-bg: #f8f9fa;
+  }
 
-    .navbar {
-      background: #fff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    }
+  body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    line-height: 1.7;
+    background-color: #fff;
+  }
 
-    #hero {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(120deg, #0d6efd, #6610f2);
-      color: white;
-    }
+  /* NAVBAR */
+  .navbar {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
 
-    #hero img {
-      width: 160px;
-      border-radius: 50%;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, .4);
-    }
+  .nav-link:hover {
+    color: var(--primary);
+  }
 
-    section {
-      padding: 60px 0;
-    }
+  /* HERO */
+  #hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(120deg, var(--primary), var(--secondary));
+    color: white;
+  }
 
-    .section-title h2 {
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
+  #hero img {
+    width: 170px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, .4);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .4);
+    transition: transform .3s ease;
+  }
 
-    .timeline {
-      border-left: 3px solid #0d6efd;
-      padding-left: 30px;
-    }
+  #hero img:hover {
+    transform: scale(1.05);
+  }
 
-    .timeline-item {
-      margin-bottom: 40px;
-      position: relative;
-    }
+  /* SECTIONS */
+  section {
+    padding: 80px 0;
+  }
 
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -41px;
-      top: 0;
-      width: 18px;
-      height: 18px;
-      background: #0d6efd;
-      border-radius: 50%;
-    }
+  .section-box {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+  }
 
-    footer {
-      background: #111;
-      color: #aaa;
-      padding: 20px 0;
-    }
-  </style>
+  .section-title h2 {
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-title h2::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 10px;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    border-left: 3px solid var(--primary);
+    padding-left: 30px;
+  }
+
+  .timeline-item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .05);
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -41px;
+    top: 30px;
+    width: 18px;
+    height: 18px;
+    background: var(--primary);
+    border-radius: 50%;
+  }
+
+  /* CARDS */
+  .card {
+    border-radius: 14px;
+  }
+
+  /* LISTS */
+  .list-group-item {
+    background: transparent;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: #aaa;
+    padding: 20px 0;
+  }
+</style>
+
 </head>
 
 <body>
@@ -693,22 +756,35 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    // Inicializa AOS
-    AOS.init();
+  AOS.init({
+    duration: 800,
+    once: true
+  });
 
-    // Función para cambiar idioma
-    function changeLanguage(lang) {
-      // Oculta todos los elementos multilenguaje
-      document.querySelectorAll('[data-lang]').forEach(el => el.style.display = 'none');
+  function changeLanguage(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.style.display = 'none';
+    });
 
-      // Muestra solo el idioma seleccionado
-      document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => el.style.display = 'block');
+    document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+      el.style.display = 'block';
+    });
 
-      // Mostrar solo el botón de CV correspondiente
-      document.getElementById('cvDownloadES').style.display = lang === 'es' ? 'inline-block' : 'none';
-      document.getElementById('cvDownloadEN').style.display = lang === 'en' ? 'inline-block' : 'none';
-      document.getElementById('cvDownloadPT').style.display = lang === 'pt' ? 'inline-block' : 'none';
-    }
-  </script>
+    const cvMap = {
+      es: 'cvDownloadES',
+      en: 'cvDownloadEN',
+      pt: 'cvDownloadPT'
+    };
+
+    Object.values(cvMap).forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = 'none';
+    });
+
+    const activeCV = document.getElementById(cvMap[lang]);
+    if (activeCV) activeCV.style.display = 'inline-block';
+  }
+</script>
+
 </body>
 </html>
