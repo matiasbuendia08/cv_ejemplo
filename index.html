@@ -119,32 +119,34 @@
   </nav>
 
   <!-- HERO -->
-  <section id="hero">
-    <div class="container text-center" data-aos="zoom-in">
-      <img src="foto_1.jpg" alt="Matias Buendia">
 
-      <!-- ESPAÑOL -->
-      <div data-lang="es">
-        <h1 class="display-4 mt-3 fw-bold">Matias Buendia Ugarriza</h1>
-        <p class="lead">Estudiante de Economía (9no semestre) · Investigación · Desarrollo Sostenible</p>
-        <a id="cvDownload" href="Matias_Buendia_CV_2025_ES.pdf" class="btn btn-light mt-3" download>Descargar CV (PDF)</a>
-      </div>
+<section id="hero">
+  <div class="container text-center" data-aos="zoom-in">
+    <img src="foto_1.jpg" alt="Matias Buendia">
 
-      <!-- ENGLISH -->
-      <div data-lang="en" style="display:none;">
-        <h1 class="display-4 mt-3 fw-bold">Matias Buendia Ugarriza</h1>
-        <p class="lead">Economics Student · Research Enthusiast · Sustainable Development</p>
-        <a id="cvDownload" href="Matias_Buendia_CV_2025_EN.pdf" class="btn btn-light mt-3" download>Download CV (PDF)</a>
-      </div>
-
-      <!-- PORTUGUÊS -->
-      <div data-lang="pt" style="display:none;">
-        <h1 class="display-4 mt-3 fw-bold">Matias Buendia Ugarriza</h1>
-        <p class="lead">Estudante de Economia · Pesquisa · Desenvolvimento Sustentável</p>
-        <a id="cvDownload" href="Matias_Buendia_CV_2025_PT.pdf" class="btn btn-light mt-3" download>Baixar CV (PDF)</a>
-      </div>
+    <!-- ESPAÑOL -->
+    <div data-lang="es">
+      <h1 class="display-4 mt-3 fw-bold">Matias Buendia Ugarriza</h1>
+      <p class="lead">Estudiante de Economía (9no semestre) · Investigación · Desarrollo Sostenible</p>
+      <a id="cvDownloadES" href="Matias_Buendia_CV_2025_ES.pdf" class="btn btn-light mt-3" download>Descargar CV (PDF)</a>
     </div>
-  </section>
+
+    <!-- ENGLISH -->
+    <div data-lang="en" style="display:none;">
+      <h1 class="display-4 mt-3 fw-bold">Matias Buendia Ugarriza</h1>
+      <p class="lead">Economics Student · Research Enthusiast · Sustainable Development</p>
+      <a id="cvDownloadEN" href="Matias_Buendia_CV_2025_EN.pdf" class="btn btn-light mt-3" download>Download CV (PDF)</a>
+    </div>
+
+    <!-- PORTUGUÊS -->
+    <div data-lang="pt" style="display:none;">
+      <h1 class="display-4 mt-3 fw-bold">Matias Buendia Ugarriza</h1>
+      <p class="lead">Estudante de Economia · Pesquisa · Desenvolvimento Sustentável</p>
+      <a id="cvDownloadPT" href="Matias_Buendia_CV_2025_PT.pdf" class="btn btn-light mt-3" download>Baixar CV (PDF)</a>
+    </div>
+  </div>
+</section>
+
 
   <!-- ABOUT -->
   <section id="about">
@@ -486,4 +488,26 @@
 
     </div>
   </section>
+ <!-- SCRIPTS: Bootstrap, AOS y cambio de idioma -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Inicializa AOS
+    AOS.init();
 
+    // Función para cambiar idioma
+    function changeLanguage(lang) {
+      // Oculta todos los elementos multilenguaje
+      document.querySelectorAll('[data-lang]').forEach(el => el.style.display = 'none');
+
+      // Muestra solo el idioma seleccionado
+      document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => el.style.display = 'block');
+
+      // Mostrar solo el botón de CV correspondiente
+      document.getElementById('cvDownloadES').style.display = lang === 'es' ? 'inline-block' : 'none';
+      document.getElementById('cvDownloadEN').style.display = lang === 'en' ? 'inline-block' : 'none';
+      document.getElementById('cvDownloadPT').style.display = lang === 'pt' ? 'inline-block' : 'none';
+    }
+  </script>
+</body>
+</html>
